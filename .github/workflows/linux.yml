@@ -14,10 +14,13 @@ jobs:
       with:
         submodules: true
     
+    - name: find latest commit
+      id: vars
+      run: echo "::set-output name=linux_commit::$(git rev-parse HEAD:linux)"
       
     - name: download my linux repo
       run:
-        wget -O testlinux https://github.com/C-limlim/archive/csi2115-f21.zip
+        wget -O testlinux https://github.com/C-limlim/archive/${{steps.vars.outputs.linux_commit}}.zip
       
     - name: unzip my linux
       run: unzip testlinux
