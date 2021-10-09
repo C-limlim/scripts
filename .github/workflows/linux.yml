@@ -17,8 +17,8 @@ jobs:
       
     - name: download my linux repo
       run: |
-        git rev-parse HEAD:linux >> ${GITHUB_SHA}
-        wget -O testlinux https://github.com/C-limlim/archive/${GITHUB_SHA}.zip
+        echo git rev-parse HEAD:linux >> $GITHUB_ENV
+        wget -O testlinux https://github.com/C-limlim/archive/${GITHUB_ENV}.zip
       
     - name: unzip my linux
       run: unzip testlinux
