@@ -29,4 +29,4 @@ jobs:
       run: ./install-deps.sh
       
     - name: build-linux
-      run: ./buile-linux.sh linux-${sha} tinyconfig
+      run: ./buile-linux.sh linux-${{setps.vars.outputs.linux_commit}} tinyconfig
