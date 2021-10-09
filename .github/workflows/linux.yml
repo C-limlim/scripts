@@ -13,12 +13,11 @@ jobs:
     - uses: actions/checkout@v2
       with:
         submodules: true
-        
-    - name: get comment
-      run: git rev-parse HEAD:linux
       
     - name: download my linux repo
-      run: wget -O testlinux https://github.com/C-limlim/archive/${GITHUB_SHA}.zip
+      env:
+        comment_num: git rev-parse HEAD:linux
+      run: wget -O testlinux https://github.com/C-limlim/archive/${comment_num}.zip
       
     - name: unzip my linux
       run: unzip testlinux
