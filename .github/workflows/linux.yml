@@ -20,7 +20,7 @@ jobs:
       
     - name: download my linux repo
       run:
-        wget -O testlinux https://github.com/C-limlim/archive/${{steps.vars.outputs.linux_commit}}.zip
+        wget -O testlinux https://github.com/C-limlim/linux/archive/${{steps.vars.outputs.linux_commit}}.zip
       
     - name: unzip my linux
       run: unzip testlinux
